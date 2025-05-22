@@ -118,4 +118,46 @@ textarea {
   opacity: 0.4;
 }
 
+@media (max-width: 1150px) {
+  .container {
+    width: 85vw;
+    height: 100%;
+    flex-direction: column;
+  }
 
+  .stat:nth-child(1),
+  .stat:nth-child(2),
+  .stat:nth-child(4) {
+    border: none;
+  }
+
+  .textarea {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .stats {
+    height: 200px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .stat {
+    padding: 15px 10px;
+  }
+
+  .stat__number {
+    font-size: 20px;
+  }
+
+  .first-heading {
+    font-size: 7vw;
+  }
+
+  .footer {
+    width: initial;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
