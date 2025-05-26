@@ -1,21 +1,12 @@
-console.log('Hello There!');
-const pet = {
-  name: 'Fluffy',
-  species: 'cat',
-  age: 3,
-  color: 'white',
-  owner: {
-    name: 'Alice',
-    age: 30,
-    address: {
-      street: '123 Main St',
-      city: 'Springfield',
-      state: 'IL',
-      zip: '62701'
-    }
-  }
-}
+const textareaEl = document.querySelector('.textarea');
 
-console.log(pet.owner.name); // Alice
-console.log(pet.owner.address.city); // Springfield
-console.log(pet.species); // cat
+textareaEl.addEventListener('input', (e) => {
+  const text = e.target.value;
+  const words = text.split(/\s+/).filter(word => word.length > 0);
+  const wordCount = words.length;
+
+  const charCount = text.length;
+
+  document.querySelector('.stat__number--words').textContent = `Word Count: ${wordCount}`;
+  document.querySelector('.stat__number--character').textContent = `Character Count: ${charCount}`;
+})
