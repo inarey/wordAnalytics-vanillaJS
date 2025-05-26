@@ -4,7 +4,7 @@ const twitterNumberEl = document.querySelector('.stat__number--twitter');
 const facebookNumberEl = document.querySelector('.stat__number--facebook');
 const wordsNumberEl = document.querySelector('.stat__number--words');
 
-textareaEl.addEventListener('input', (e) => {
+const inputHandler = (e) => {
   // determine the new number of characters
   const numberOfChars = textareaEl.value.length;
   const twitterCharLeft = 280 - numberOfChars;
@@ -26,9 +26,16 @@ textareaEl.addEventListener('input', (e) => {
     facebookNumberEl.classList.remove('stat__number--limit');
   }
 
+  // input validation
+  if (textareaEl.value.includes('<script>')) {
+    alert('I gotcha ya! haha!')
+  }
+
   // set new number
   charNumberEl.textContent = numberOfChars;
   twitterNumberEl.textContent = twitterCharLeft;
   facebookNumberEl.textContent = facebookCharLeft;
   wordsNumberEl.textContent = wordCount;
-});
+};
+
+  textareaEl.addEventListener('input', inputHandler);  
