@@ -9,7 +9,9 @@ textareaEl.addEventListener('input', (e) => {
   const numberOfChars = textareaEl.value.length;
   const twitterCharLeft = 280 - numberOfChars;
   const facebookCharLeft = 2200 - numberOfChars;
-  const words = text.split(/\s+/).filter(word => word.length > 0);
+
+  const numberOfWords = textareaEl.value;
+  const words = numberOfWords.split(/\s+/).filter(word => word.length > 0);
   const wordCount = words.length;
 
   // add visual inidicator if limit is exceeded
@@ -28,4 +30,5 @@ textareaEl.addEventListener('input', (e) => {
   charNumberEl.textContent = numberOfChars;
   twitterNumberEl.textContent = twitterCharLeft;
   facebookNumberEl.textContent = facebookCharLeft;
+  wordsNumberEl.textContent = wordCount;
 });
